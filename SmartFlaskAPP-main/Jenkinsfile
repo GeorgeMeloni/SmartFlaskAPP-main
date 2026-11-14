@@ -25,11 +25,7 @@ pipeline {
 	stage ("Publish Code Coverage") {
             steps{
 				echo "Publish code coverage"
-				cobertura(
-                coberturaReportFile: 'coverage.xml',
-                autoUpdateHealth: false,
-                autoUpdateStability: false
-                )
+				cobertura path: 'coverage.xml'
             }
         }
     }
